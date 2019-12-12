@@ -3,8 +3,15 @@
 import argparse
 
 def find_max_profit(prices):
-  pass
-
+      sumOfSmallBig=0
+      for firstRound in prices:
+            for secondRound in prices[:prices.index(firstRound)]:
+                  if secondRound<firstRound:                                            
+                        if firstRound-secondRound>sumOfSmallBig:
+                              sumOfSmallBig=firstRound-secondRound             
+                  elif secondRound==prices[len(prices)-2] and sumOfSmallBig==0:
+                        sumOfSmallBig=firstRound-secondRound
+      return sumOfSmallBig
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
