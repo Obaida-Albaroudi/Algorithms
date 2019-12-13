@@ -8,9 +8,6 @@ import sys
 def eating_cookies(n, cache={}): 
   
   if n in cache:
-    print("n",n)
-    print("cache[n]",cache[n])
-    print("cache",cache)
     return cache[n]    
 
   if n==0:
